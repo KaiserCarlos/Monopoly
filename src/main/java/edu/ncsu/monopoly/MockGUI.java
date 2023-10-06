@@ -11,6 +11,7 @@ public class MockGUI implements MonopolyGUI {
     }
 
     public void enablePurchaseBtn(int playerIndex) {
+    	//TODO
     }
 	public int[] getDiceRoll() {
 		int roll[] = new int[2];
