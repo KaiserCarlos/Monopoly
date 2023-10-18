@@ -1,36 +1,31 @@
 package edu.ncsu.monopoly;
 
-public abstract class Cell {
-	private boolean available = true;
+public abstract class Cell implements IOwnable {
 	private String name;
 	protected Player owner;
+	private boolean available = true;
 
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public Player getOwner() {
 		return owner;
 	}
 	
+	@Override
 	public int getPrice() {
 		return 0;
 	}
 
-	public boolean isAvailable() {
-		return available;
-	}
-	
 	public abstract void playAction();
 
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
-	
 	void setName(String name) {
 		this.name = name;
 	}
 
+	@Override
 	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
@@ -38,4 +33,14 @@ public abstract class Cell {
     public String toString() {
         return name;
     }
+
+	@Override
+	public boolean isAvailable() {
+		return available;
+	}
+
+	@Override
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 }
